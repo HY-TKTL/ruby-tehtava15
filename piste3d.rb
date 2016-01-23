@@ -12,7 +12,7 @@ class Piste3d < Piste
  end
 
  def etaisyys_origosta
-  Math.sqrt(@x*@x + @y*@y +@z*@z)
+  Math.sqrt(@x*@x + @y*@y + @z*@z)
  end
 
  def siirra(dx, dy, dz)

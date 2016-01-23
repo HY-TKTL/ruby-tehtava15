@@ -1,6 +1,9 @@
 require './piste.rb'
 
 class Piste3d < Piste
+	
+ attr_reader :z
+ 
  def initialize(x,y, z)
   super(x,y)
   @z = z

@@ -28,10 +28,10 @@ RSpec.describe 'luokka Varipiste' do
   it "metodi etaisyys_origosta toimii" do
     require './varipiste.rb'
     p1 = Varipiste.new 3, 4, :punainen
-    expect(abs(p1.etaisyys_origosta - 5)).to be <= 0.000001
+    expect((p1.etaisyys_origosta - 5)).to be <= 0.000001
 
     p1 = Varipiste.new 1, 1, :vihrea
-    expect(abs(p1.etaisyys_origosta - Math.sqrt(2))).to be <= 0.000001
+    expect((p1.etaisyys_origosta - Math.sqrt(2))).to be <= 0.000001
   end
 
   it "metodi siirra on peritty pisteeltä" do
@@ -79,10 +79,10 @@ RSpec.describe 'luokka Piste3d' do
   it "metodi etaisyys_origosta toimii" do
     require './piste3d.rb'
     p1 = Piste3d.new 4, 4, 2
-    expect(abs(p1.etaisyys_origosta - 6)).to be <= 0.000001
+    expect((p1.etaisyys_origosta - 6)).to be <= 0.000001
 
     p1 = Piste3d.new 1, 1, 1
-    expect(abs(p1.etaisyys_origosta - Math.sqrt(3))).to be <= 0.000001
+    expect((p1.etaisyys_origosta - Math.sqrt(3))).to be <= 0.000001
   end
 
   it "metodi siirra on ylikirjoitettu" do

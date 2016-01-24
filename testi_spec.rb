@@ -1,4 +1,7 @@
 RSpec.describe 'luokka Varipiste' do
+
+  delta = 0.0001
+
   it "on määritelty oikeassa tiedostossa" do
     expect(File.exists? './varipiste.rb' ).to be true
     require './varipiste.rb'
@@ -28,10 +31,10 @@ RSpec.describe 'luokka Varipiste' do
   it "metodi etaisyys_origosta toimii" do
     require './varipiste.rb'
     p1 = Varipiste.new 3, 4, :punainen
-    expect(abs(p1.etaisyys_origosta - 5)).to be <= 0.000001
+    expect(p1.etaisyys_origosta).to be_within(delta).of 5
 
     p1 = Varipiste.new 1, 1, :vihrea
-    expect(abs(p1.etaisyys_origosta - Math.sqrt(2))).to be <= 0.000001
+    expect(p1.etaisyys_origosta).to be_within(delta).of Math.sqrt 2
   end
 
   it "metodi siirra on peritty pisteeltä" do
@@ -50,6 +53,10 @@ RSpec.describe 'luokka Varipiste' do
 end
 
 RSpec.describe 'luokka Piste3d' do
+
+  delta = 0.0001
+
+
   it "on määritelty oikeassa tiedostossa" do
     expect(File.exists? './piste3d.rb' ).to be true
     require './piste3d.rb'
@@ -79,10 +86,10 @@ RSpec.describe 'luokka Piste3d' do
   it "metodi etaisyys_origosta toimii" do
     require './piste3d.rb'
     p1 = Piste3d.new 4, 4, 2
-    expect(abs(p1.etaisyys_origosta - 6)).to be <= 0.000001
+    expect(p1.etaisyys_origosta).to be_within(delta).of 6
 
     p1 = Piste3d.new 1, 1, 1
-    expect(abs(p1.etaisyys_origosta - Math.sqrt(3))).to be <= 0.000001
+    expect(p1.etaisyys_origosta).to be_within(delta).of Math.sqrt 3
   end
 
   it "metodi siirra on ylikirjoitettu" do

@@ -1,3 +1,4 @@
+# uusi yritys
 require './piste.rb'
 
 class Piste3d < Piste
